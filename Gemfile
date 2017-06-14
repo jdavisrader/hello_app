@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails',        '5.0.3'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
@@ -15,9 +16,11 @@ gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.6.4'
 
+
 group :development, :test do
-  gem 'sqlite3', '1.3.13'
-  gem 'byebug',  '9.0.6', platform: :mri
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3'
 end
 
 group :development do
@@ -28,7 +31,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '0.20.0'
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
